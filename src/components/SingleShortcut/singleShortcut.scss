@@ -1,0 +1,44 @@
+.single-shortcut {
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-family: "Merriweather";
+  font-style: normal;
+  img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .source-img {
+    position: absolute;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    color: #919191;
+    right: 0;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 24px;
+    color: #606060;
+  }
+
+  .excerpts {
+    font-weight: 400;
+    font-size: 13px;
+    color: #9f9f9f;
+  }
+
+  .author {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    color: #141414;
+  }
+}
