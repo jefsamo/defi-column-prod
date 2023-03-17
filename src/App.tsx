@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Home from "./pages/Home/Home";
 
 function App() {
   const Layout = () => {
@@ -19,10 +20,10 @@ function App() {
       path: "/",
       element: <Layout />,
       children: [
-        // {
-        //   path: "/",
-        //   element: <Home />,
-        // },
+        {
+          path: "/",
+          element: <Home />,
+        },
         // {
         //   path: "/beginner-guide",
         //   element: <BeginnerGuide />,

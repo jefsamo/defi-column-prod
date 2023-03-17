@@ -1,0 +1,50 @@
+.headline {
+  display: grid;
+  grid-template-columns: 65% 3% 32%;
+  font-family: "Merriweather";
+  font-style: normal;
+
+  .left-headline {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 520px;
+    }
+
+    .title-author {
+      position: absolute;
+      bottom: 100px;
+      width: 80%;
+      margin: 30px 20px;
+
+      .title {
+        font-family: "Merriweather";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        color: #292d32;
+      }
+
+      .author {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 11px;
+
+        color: #141414;
+      }
+    }
+
+    .source-img {
+      position: absolute;
+      right: 0;
+
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      color: #919191;
+    }
+  }
+}

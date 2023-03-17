@@ -13,7 +13,12 @@ const Navbar = () => {
       <div className="navbar-1">
         <div className="left-menu">
           <div className="hamburger">
-            <Burger opened={opened} onClick={toggle} size={26} />
+            <Burger
+              opened={opened}
+              onClick={toggle}
+              size={26}
+              className="ham"
+            />
           </div>
           <div className="nav-links">
             <CiSearch className="search-icon" />
