@@ -1,0 +1,41 @@
+.must-read {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 30px;
+  height: fit-content;
+
+  .left-mustread {
+    .title {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      color: #141414;
+      text-transform: uppercase;
+    }
+  }
+  .right-mustread {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Lato";
+      font-style: normal;
+
+      .title {
+        font-weight: 600;
+        font-size: 32px;
+        color: #141414;
+        text-transform: uppercase;
+      }
+
+      a {
+        font-weight: 600;
+        font-size: 11px;
+        color: #898989;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

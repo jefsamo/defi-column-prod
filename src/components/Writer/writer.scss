@@ -1,0 +1,32 @@
+.writer {
+  display: flex;
+  gap: 10px;
+  img {
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .writer-details {
+    font-family: "Lato";
+    font-style: normal;
+
+    .name {
+      font-weight: 600;
+      font-size: 11px;
+      color: #141414;
+      margin: 5px 0;
+    }
+
+    .desc {
+      font-weight: 400;
+      font-size: 14px;
+      color: #9f9f9f;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}

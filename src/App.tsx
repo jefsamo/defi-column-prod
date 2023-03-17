@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import Subscribe from "./components/Subscribe/Subscribe";
 
 function App() {
   const Layout = () => {
@@ -11,6 +12,7 @@ function App() {
         <div className="container">
           <Outlet />
         </div>
+        <Subscribe />
       </>
     );
   };
