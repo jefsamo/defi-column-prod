@@ -1,0 +1,123 @@
+.article {
+  height: fit-content;
+  .banner {
+    // height: 300px;
+    position: relative;
+    // padding: 30px;
+    .banner-img {
+      width: 100%;
+    }
+
+    .title {
+      position: absolute;
+      bottom: 0;
+      max-width: 400px;
+      margin: 40px;
+      font-family: "Merriweather";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      color: #fff;
+      text-shadow: 2px 2px 7px #000000;
+    }
+    p {
+      position: absolute;
+      right: 30px;
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      color: #919191;
+    }
+  }
+  .save-author {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .author {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      color: #141414;
+    }
+
+    .date {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 11px;
+      color: #cdcdcd;
+    }
+  }
+
+  .article-section {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+
+    .left-section {
+      .share {
+        text-transform: uppercase;
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        color: #141414;
+      }
+
+      .share-links {
+        .img-container {
+          width: 36px;
+          height: 36px;
+          background: #f3f3f3;
+          border-radius: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .right-section {
+      .inner-right {
+        width: 70%;
+        .text {
+          font-family: "Merriweather";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          color: #585858;
+        }
+      }
+    }
+  }
+
+  .related-overview {
+    width: 60%;
+    margin: 30px auto;
+
+    .related-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        color: #141414;
+      }
+
+      a {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 11px;
+        color: #898989;
+      }
+    }
+  }
+}

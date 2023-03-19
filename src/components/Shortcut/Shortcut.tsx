@@ -3,11 +3,13 @@ import "./shortcut.scss";
 
 const Shortcut = () => {
   return (
-    <div className="shortcut">
-      <SingleShortcut />
-      <SingleShortcut />
-      <SingleShortcut />
-      <SingleShortcut />
+    <div className="container">
+      <div className="shortcut">
+        <SingleShortcut />
+        <SingleShortcut />
+        <SingleShortcut />
+        <SingleShortcut />
+      </div>
     </div>
   );
 };
