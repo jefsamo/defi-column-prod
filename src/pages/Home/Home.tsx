@@ -13,13 +13,17 @@ const Home = () => {
       </div>
       <div className="shortcut-overview">
         <Space h="md" />
-        <Divider size="xs" color="#F3F3F3;" />
+        <div className="container">
+          <Divider size="xs" color="#F3F3F3;" />
+        </div>
         <Space h="md" />
         <Shortcut />
       </div>
       <div className="nfts-defi-overview">
         <Space h="md" />
-        <Divider size="xs" color="#F3F3F3;" />
+        <div className="container">
+          <Divider size="xs" color="#F3F3F3;" />
+        </div>
         <Space h="md" />
         <Space h="md" />
         <NftsDefi />

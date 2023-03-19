@@ -1,12 +1,12 @@
 import React from "react";
 import "./preview.scss";
 import PreviewImg from "../../assets/preview.png";
-import { Center, Divider, Space } from "@mantine/core";
+import { Divider, Space } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 const Preview = () => {
   return (
-    <Link to="" style={{ textDecoration: "none" }}>
+    <Link to="post/1" style={{ textDecoration: "none" }}>
       <div className="preview-container">
         <div className="preview">
           <div className="left-preview">
