@@ -2,11 +2,7 @@ import "./preview.scss";
 import PreviewImg from "../../assets/preview.png";
 import { Divider, Space } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { storyDataType } from "../../utils/storyData";
-
-type Story = {
-  story: storyDataType;
-};
+import { Story } from "../../utils/constants";
 
 const Preview = ({ story }: Story) => {
   console.log(story);
