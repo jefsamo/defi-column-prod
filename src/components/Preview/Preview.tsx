@@ -1,20 +1,22 @@
-import React from "react";
 import "./preview.scss";
 import PreviewImg from "../../assets/preview.png";
 import { Divider, Space } from "@mantine/core";
 import { Link } from "react-router-dom";
+import { storyDataType } from "../../utils/storyData";
 
-const Preview = () => {
+type Story = {
+  story: storyDataType;
+};
+
+const Preview = ({ story }: Story) => {
+  console.log(story);
   return (
-    <Link to="post/1" style={{ textDecoration: "none" }}>
+    <Link to={`post/${story.slug}`} style={{ textDecoration: "none" }}>
       <div className="preview-container">
         <div className="preview">
           <div className="left-preview">
-            <h2 className="title">
-              Ai Art and its Effect on the NFT ecosystem i Art and its Effect on
-              the NFT ecosystem
-            </h2>
-            <p className="author">Olawale Shopeyin</p>
+            <h2 className="title">{story.title}</h2>
+            <p className="author">{story.author.name}</p>
           </div>
           <div className="right-preview">
             <img src={PreviewImg} alt="preview" />

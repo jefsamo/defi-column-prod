@@ -2,8 +2,15 @@ import "./headline.scss";
 import { Center, Divider } from "@mantine/core";
 import HeadlineImg from "../../assets/headline.png";
 import Preview from "../Preview/Preview";
+import { useStoriesContext } from "../../contexts/stories_context";
 
 const Headline = () => {
+  const { allStories, storiesLoading } = useStoriesContext();
+  console.log(allStories);
+  if (storiesLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="container">
       <div className="headline">
@@ -23,10 +30,9 @@ const Headline = () => {
           <Divider orientation="vertical" size="xs" color="#F3F3F3;" />
         </Center>
         <div className="right-headline">
-          <Preview />
-          <Preview />
-          <Preview />
-          <Preview />
+          {allStories.slice(0, 5).map((story) => {
+            return <Preview key={story._id} story={story} />;
+          })}
         </div>
       </div>
     </div>
