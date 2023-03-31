@@ -48,3 +48,37 @@
     }
   }
 }
+
+@media screen and (max-width: 960px) {
+  .headline {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+
+    .left-headline {
+      position: relative;
+      margin-bottom: 60px;
+      img {
+        height: 216px;
+      }
+
+      .title-author {
+        position: absolute;
+        bottom: 0;
+
+        .title {
+          font-size: 16px;
+        }
+
+        .author {
+          font-family: "Lato";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 11px;
+
+          color: #141414;
+        }
+      }
+    }
+  }
+}

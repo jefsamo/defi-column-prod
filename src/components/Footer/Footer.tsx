@@ -6,6 +6,7 @@ import { FiInstagram } from "react-icons/fi";
 import { BsYoutube } from "react-icons/bs";
 import D from "../../assets/D.png";
 import Column from "../../assets/column.png";
+import { Accordion } from "@mantine/core";
 
 const Footer = () => {
   return (

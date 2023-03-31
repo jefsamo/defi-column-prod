@@ -31,3 +31,32 @@
     }
   }
 }
+
+@media screen and (max-width: 960px) {
+  .preview {
+    display: flex;
+    height: fit-content;
+    .left-preview {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .title {
+        font-size: 12px;
+      }
+      .author {
+        font-size: 8px;
+        color: #141414;
+        margin-bottom: 0;
+      }
+    }
+    .right-preview {
+      flex: 1;
+
+      img {
+        width: 100%;
+        height: 72px;
+        object-fit: contain;
+      }
+    }
+  }
+}

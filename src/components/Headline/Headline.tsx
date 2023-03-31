@@ -19,7 +19,7 @@ const Headline = () => {
             PHOTO ILLUSTRATION BY STUDIO HUSLOW / GETTY
           </p>
         </div>
-        <Center>
+        <Center className="center-mantine">
           <Divider orientation="vertical" size="xs" color="#F3F3F3;" />
         </Center>
         <div className="right-headline">

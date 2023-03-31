@@ -11,7 +11,8 @@ const Preview = () => {
         <div className="preview">
           <div className="left-preview">
             <h2 className="title">
-              Ai Art and its Effect on the NFT ecosystem
+              Ai Art and its Effect on the NFT ecosystem i Art and its Effect on
+              the NFT ecosystem
             </h2>
             <p className="author">Olawale Shopeyin</p>
           </div>

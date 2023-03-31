@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Subscribe from "./components/Subscribe/Subscribe";
 import Footer from "./components/Footer/Footer";
 import Article from "./pages/Article/Article";
+import Error from "./pages/Error/Error";
 
 function App() {
   const Layout = () => {
@@ -24,6 +25,7 @@ function App() {
     {
       path: "/",
       element: <Layout />,
+      errorElement: <Error />,
       children: [
         {
           path: "/",

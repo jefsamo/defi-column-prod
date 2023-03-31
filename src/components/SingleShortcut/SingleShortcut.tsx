@@ -16,7 +16,7 @@ const SingleShortcut = () => {
           With the exception of Aptos, the airdrop meta has been lacking
           seriously. Almost dead.
         </p>
-        <Space h="md" />
+        <Space h="md" className="space" />
         <p className="author">Olawale Shopeyin</p>
       </div>
     </Link>
