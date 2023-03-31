@@ -6,7 +6,7 @@ import { Story } from "../../utils/constants";
 
 const SingleShortcut = ({ story }: Story) => {
   return (
-    <Link to="" style={{ textDecoration: "none" }}>
+    <Link to={`/post/${story.slug}`} style={{ textDecoration: "none" }}>
       <div className="single-shortcut">
         <img src={Shortcut} alt="" />
         <p className="source-img">MOTION DESIGN/ STUDIO HUSLOW/GETTY</p>
