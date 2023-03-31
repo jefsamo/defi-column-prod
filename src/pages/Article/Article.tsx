@@ -5,23 +5,34 @@ import { Divider, Space } from "@mantine/core";
 import Insta from "../../assets/instagram.png";
 import Printer from "../../assets/printer.png";
 import FB from "../../assets/facebook2.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SingleMustRead from "../../components/SingleMustRead/SingleMustRead";
+import { useStoriesContext } from "../../contexts/stories_context";
+import { useEffect } from "react";
 
 const Article = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const { fetchSingleStory, singleStory } = useStoriesContext();
+  console.log(singleStory);
+  const { author, title } = { ...singleStory };
+
+  useEffect(() => {
+    if (slug) {
+      fetchSingleStory(slug);
+    }
+  }, [slug]);
+
   return (
     <div className="article">
       <div className="banner">
         <img src={Beginner} alt="" className="banner-img" />
-        <h1 className="title">
-          TALKING NFTS, CRYPTO AND DECENTRALIZED FINANCE IN THIS BEAR RUN
-        </h1>
+        <h1 className="title">{title}</h1>
         <p>PHOTO ILLUSTRATION BY STUDIO HUSLOW / GETTY</p>
       </div>
       <div className="container">
         <div className="save-author">
           <div className="left">
-            <p className="author">By Olawale Shopeyin</p>
+            <p className="author">{author?.name}</p>
             <Space h="xs" />
             <p className="date">March 2023</p>
           </div>

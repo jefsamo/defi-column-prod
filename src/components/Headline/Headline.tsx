@@ -30,7 +30,7 @@ const Headline = () => {
           <Divider orientation="vertical" size="xs" color="#F3F3F3;" />
         </Center>
         <div className="right-headline">
-          {allStories.slice(0, 5).map((story) => {
+          {allStories.slice(0, 4).map((story) => {
             return <Preview key={story._id} story={story} />;
           })}
         </div>

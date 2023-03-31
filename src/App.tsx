@@ -37,7 +37,7 @@ function App() {
         //   element: <BeginnerGuide />,
         // },
         {
-          path: "/post/:id",
+          path: "/post/:slug",
           element: <Article />,
         },
         {

@@ -17,7 +17,7 @@ export type initialStateType = {
   singleStory: storyDataType | {};
   fetchSingleStory: (id: string) => void;
   singleStoryLoading: boolean;
-  singleProductError: boolean;
+  singleStoryError: boolean;
 };
 
 const initialState: initialStateType = {
@@ -27,7 +27,7 @@ const initialState: initialStateType = {
   singleStory: {},
   fetchSingleStory: (id: string) => {},
   singleStoryLoading: false,
-  singleProductError: false,
+  singleStoryError: false,
 };
 
 const StoriesContext = createContext<initialStateType>(initialState);
@@ -38,6 +38,24 @@ interface Props {
 
 export const StoriesContextProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const fetchSingleStory = (slug: string) => {
+    dispatch({ type: "GET_SINGLE_STORY_BEGIN" });
+    try {
+      const singleStory: storyDataType = state.allStories.filter(
+        (story: storyDataType) => {
+          return story.slug === slug;
+        }
+      )[0];
+      if (singleStory) {
+        dispatch({ type: "GET_SINGLE_STORY_SUCCCESS", payload: singleStory });
+      }
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: "GET_SINGLE_STORY_ERROR" });
+    }
+  };
+
   useEffect(() => {
     const getStories = async () => {
       dispatch({ type: "GET_STORIES_BEGIN" });
@@ -57,7 +75,7 @@ export const StoriesContextProvider = ({ children }: Props) => {
   }, []);
 
   return (
-    <StoriesContext.Provider value={{ ...state }}>
+    <StoriesContext.Provider value={{ ...state, fetchSingleStory }}>
       {children}
     </StoriesContext.Provider>
   );

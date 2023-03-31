@@ -5,6 +5,7 @@ import {
   GET_SINGLE_STORY_SUCCCESS,
   GET_STORIES_ERROR,
   GET_STORIES_SUCCESS,
+  GET_SINGLE_STORY_ERROR,
 } from "../utils/actions";
 
 import { initialStateType } from "../contexts/stories_context";
@@ -24,6 +25,23 @@ const stories_reducer = (state: initialStateType, action: Action) => {
       return { ...state, storiesLoading: false, allStories };
     case GET_STORIES_ERROR:
       return { ...state, storiesLoading: false, storiesError: true };
+    case GET_SINGLE_STORY_BEGIN:
+      return {
+        ...state,
+        singleStoryLoading: true,
+      };
+    case GET_SINGLE_STORY_SUCCCESS:
+      return {
+        ...state,
+        singleStoryLoading: false,
+        singleStory: action.payload,
+      };
+    case GET_SINGLE_STORY_ERROR:
+      return {
+        ...state,
+        singleStoryLoading: false,
+        singleStoryError: true,
+      };
     default:
       return state;
   }
