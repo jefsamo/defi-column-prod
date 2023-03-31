@@ -1,4 +1,6 @@
 import { Divider, Space } from "@mantine/core";
+import axios from "axios";
+import { useEffect } from "react";
 import Headline from "../../components/Headline/Headline";
 import MustRead from "../../components/MustRead/MustRead";
 import NftsDefi from "../../components/NftsDefi/NftsDefi";
