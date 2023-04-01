@@ -1,0 +1,72 @@
+import axios from "axios";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
+import auth_reducer from "../reducers/auth_reducer";
+import { baseUrl } from "../utils/constants";
+import { toast } from "react-hot-toast";
+
+interface Props {
+  children: ReactNode;
+}
+
+export type initialStateType = {
+  user: string | null;
+  isLoading: boolean;
+  isError: boolean;
+  login(email: string, password: string): void;
+};
+
+const initialState: initialStateType = {
+  user: null,
+  isLoading: false,
+  isError: false,
+  login: (email: string, password: string) => {},
+};
+
+const AuthContext = createContext<initialStateType>(initialState);
+
+export const AuthContextProvider = ({ children }: Props) => {
+  const [state, dispatch] = useReducer(auth_reducer, initialState);
+
+  const login = async (email: string, password: string) => {
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post(`${baseUrl}/api/v1/users/login`, {
+        email,
+        password,
+      });
+      if (res.data.status === "success") {
+        toast.success("Login successful");
+        dispatch({ type: "LOGIN_SUCCESS", payload: res.data.data.user });
+        localStorage.setItem("user", JSON.stringify(res.data.data.user));
+        console.log(res.data.data.user);
+      }
+      // console.log(res.data.status);
+    } catch (error) {
+      dispatch({ type: "LOGIN_ERROR" });
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user")!);
+
+    if (user) {
+      dispatch({ type: "LOGIN_SUCCESS", payload: user });
+    }
+  }, []);
+  return (
+    <AuthContext.Provider value={{ ...state, login }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuthContext = () => {
+  return useContext(AuthContext);
+};

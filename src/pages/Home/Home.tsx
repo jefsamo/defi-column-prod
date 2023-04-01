@@ -3,6 +3,7 @@ import Headline from "../../components/Headline/Headline";
 import MustRead from "../../components/MustRead/MustRead";
 import NftsDefi from "../../components/NftsDefi/NftsDefi";
 import Shortcut from "../../components/Shortcut/Shortcut";
+
 import "./home.scss";
 
 const Home = () => {

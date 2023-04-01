@@ -6,7 +6,6 @@ import { useStoriesContext } from "../../contexts/stories_context";
 
 const Headline = () => {
   const { allStories, storiesLoading } = useStoriesContext();
-  console.log(allStories);
   if (storiesLoading) {
     return <div>Loading...</div>;
   }

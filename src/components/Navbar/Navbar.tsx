@@ -4,10 +4,13 @@ import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import D from "../../assets/D.png";
 import Column from "../../assets/column.png";
+import { useAuthContext } from "../../contexts/auth_context";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [opened, { toggle }] = useDisclosure(false);
+
+  const { user } = useAuthContext();
   return (
     <div className="navbar-container">
       <div className="navbar-1">
@@ -38,7 +41,9 @@ const Navbar = () => {
           <img src={Column} alt="" className="column" />
         </div>
         <div className="right-menu">
-          <button className="subscribe-btn">Subscribe</button>
+          <button className="subscribe-btn">
+            {user ? "Logout" : "Subscribe"}
+          </button>
         </div>
       </div>
     </div>

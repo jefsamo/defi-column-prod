@@ -61,9 +61,7 @@ export const StoriesContextProvider = ({ children }: Props) => {
       dispatch({ type: "GET_STORIES_BEGIN" });
       try {
         const res = await axios.get(`${baseUrl}/api/v1/stories`);
-        // console.log(res);
         const result = res.data.data.stories;
-        console.log(result);
         dispatch({ type: "GET_STORIES_SUCCESS", payload: result });
       } catch (error) {
         console.log(error);

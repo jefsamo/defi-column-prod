@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { Story } from "../../utils/constants";
 
 const Preview = ({ story }: Story) => {
-  console.log(story);
   return (
     <Link to={`post/${story.slug}`} style={{ textDecoration: "none" }}>
       <div className="preview-container">

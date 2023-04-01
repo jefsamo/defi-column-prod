@@ -1,4 +1,3 @@
-import { useForm } from "@mantine/form";
 import {
   TextInput,
   Button,
@@ -9,36 +8,52 @@ import {
 } from "@mantine/core";
 import { IconEyeCheck, IconEyeOff } from "@tabler/icons-react";
 
+import { useAuthContext } from "../../contexts/auth_context";
+import { Toaster } from "react-hot-toast";
+
 import "./login.scss";
+import { useState } from "react";
 
 const Login = () => {
-  const form = useForm({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { login } = useAuthContext();
+
+  const handleSubmit = async () => {
+    login(email, password);
+  };
 
   return (
     <div className="login">
+      <Toaster />
       <div className="login-content">
         <Box maw={320} mx="auto">
           <TextInput
             label="Email"
             placeholder="Email"
-            {...form.getInputProps("email")}
+            value={email}
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <Space h="md" />
           <PasswordInput
             label="Password"
             placeholder="Password"
+            value={password}
+            name="password"
             visibilityToggleIcon={({ reveal, size }) =>
               reveal ? <IconEyeOff size={size} /> : <IconEyeCheck size={size} />
             }
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Box>
         <Group position="center" mt="xl">
-          <Button variant="outline" className="login-btn">
+          <Button
+            variant="outline"
+            className="login-btn"
+            onClick={handleSubmit}
+          >
             Login
           </Button>
         </Group>

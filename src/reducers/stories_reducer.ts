@@ -1,6 +1,6 @@
 import {
   GET_SINGLE_STORY_BEGIN,
-  ActionType,
+  StoryActionType,
   GET_STORIES_BEGIN,
   GET_SINGLE_STORY_SUCCCESS,
   GET_STORIES_ERROR,
@@ -11,8 +11,8 @@ import {
 import { initialStateType } from "../contexts/stories_context";
 import { storyDataType } from "../utils/storyData";
 
-type Action = {
-  type: keyof ActionType;
+export type Action = {
+  type: keyof StoryActionType;
   payload?: any;
 };
 
