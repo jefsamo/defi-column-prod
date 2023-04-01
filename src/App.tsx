@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Article from "./pages/Article/Article";
 import Error from "./pages/Error/Error";
 import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 function App() {
   const Layout = () => {
@@ -43,6 +44,10 @@ function App() {
         {
           path: "/login",
           element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
         },
       ],
     },
