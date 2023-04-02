@@ -34,22 +34,21 @@ export const AuthContextProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(auth_reducer, initialState);
 
   const login = async (email: string, password: string) => {
-    dispatch({ type: "LOGIN_START" });
     try {
+      dispatch({ type: "LOGIN_START" });
       const res = await axios.post(`${baseUrl}/api/v1/users/login`, {
         email,
         password,
       });
       if (res.data.status === "success") {
-        toast.success("Login successful");
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.data.user });
         localStorage.setItem("user", JSON.stringify(res.data.data.user));
         console.log(res.data.data.user);
       }
-      // console.log(res.data.status);
-    } catch (error) {
+    } catch (error: any) {
       dispatch({ type: "LOGIN_ERROR" });
-      console.log(error);
+      toast.error(error.data.message);
+      console.log(error.response);
     }
   };
 

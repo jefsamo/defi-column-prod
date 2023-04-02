@@ -42,6 +42,20 @@
 
 @media screen and (max-width: 960px) {
   .must-read {
-    display: none;
+    grid-template-columns: 1fr;
+
+    .left-mustread {
+      .title {
+        font-size: 20px;
+      }
+    }
+
+    .right-mustread {
+      .header {
+        .title {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }

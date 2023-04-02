@@ -11,9 +11,15 @@ const auth_reducer = (state: initialStateType, action: Action) => {
     case "LOGIN_START":
       return { ...state, isLoading: true };
     case "LOGIN_SUCCESS":
-      return { ...state, isLoading: false, user: action.payload };
+      console.log(state);
+      return {
+        ...state,
+        isLoading: false,
+        user: action.payload,
+      };
     case "LOGIN_ERROR":
-      return { ...state, isError: true, isLoading: false };
+      console.log(state);
+      return { ...state, isError: true };
     default:
       return state;
   }

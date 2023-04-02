@@ -13,7 +13,7 @@ import { useEffect } from "react";
 const Article = () => {
   const { slug } = useParams<{ slug: string }>();
   const { fetchSingleStory, singleStory } = useStoriesContext();
-  console.log(singleStory);
+  // console.log(singleStory);
   const { author, title } = { ...singleStory };
 
   useEffect(() => {

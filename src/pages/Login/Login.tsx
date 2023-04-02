@@ -9,7 +9,7 @@ import {
 import { IconEyeCheck, IconEyeOff } from "@tabler/icons-react";
 
 import { useAuthContext } from "../../contexts/auth_context";
-import { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 import "./login.scss";
 import { useState } from "react";
@@ -20,13 +20,26 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const { login } = useAuthContext();
+  // const state = {
+  //   isErrorLike: false,
+  //   name: "Wale",
+  // };
+  // console.log({ ...state, isErrorLike: true });
+
+  const { login, isError } = useAuthContext();
 
   const handleSubmit = async () => {
     login(email, password);
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
+    if (isError) {
+      console.log("ERROR!!!");
+      toast.error("Incorrect Email or password");
+      return;
+    } else {
+      toast.success("Login Successful");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
   };
 
   return (

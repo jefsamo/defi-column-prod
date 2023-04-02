@@ -25,14 +25,12 @@ const SingleMustRead = () => {
           </div>
         </div>
       </Link>
-      <Space h="md" />
-      <Divider size="xs" color="#F3F3F3;" />
-      <Space h="md" />
+      <Space h="md" className="show-mobile" />
+      <Divider size="xs" color="#F3F3F3;" className="show-mobile" />
+      <Space h="md" className="show-mobile" />
 
       <div className="single-mustread-mobile">
-        <h1>Must read</h1>
         <Space h="md" />
-        <Divider size="xs" color="#F3F3F3;" />
         <div className="content">
           <div className="left">
             <h2 className="title">
@@ -44,6 +42,7 @@ const SingleMustRead = () => {
             <img src={PreviewImg} alt="" />
           </div>
         </div>
+        <Divider size="xs" color="#F3F3F3;" />
       </div>
     </div>
   );
